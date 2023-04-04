@@ -107,12 +107,14 @@ COPY start-notebook.d /usr/local/bin/start-notebook.d
 
 ENV USER=$NB_USER
 
-USER root
-	RUN find / -path /proc -prune -o -type f 2>/dev/null -exec stat -c '%n %a' {} + | sha256sum > /home/jovyan/permissions_checksum.txt
 
 # Change the ownership of the home directory to root group so it starts up properly
 RUN chgrp root -R /home
 
 USER $NB_USER
 CMD  ["/bin/bash", "-c", "cd /home/jovyan ; start-notebook.sh"]
+
+
+# Checksum file dump for github actions
+RUN find / -path /proc -prune -o -type f 2>/dev/null -exec stat -c '%n %a' {} + | sha256sum > /home/jovyan/permissions_checksum.txt
 
