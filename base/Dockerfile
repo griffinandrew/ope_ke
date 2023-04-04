@@ -115,6 +115,9 @@ USER $NB_USER
 CMD  ["/bin/bash", "-c", "cd /home/jovyan ; start-notebook.sh"]
 
 
+USER root
+	RUN find / -path /proc -prune -o -type f 2>/dev/null -exec stat -c '%n %a' {} + | sha256sum > /home/jovyan/permissions_checksum.txt
+
 # Checksum file dump for github actions
-RUN find / -path /proc -prune -o -type f 2>/dev/null -exec stat -c '%n %a' {} + | sha256sum > /home/jovyan/permissions_checksum.txt
+#RUN find / -path /proc -prune -o -type f 2>/dev/null -exec stat -c '%n %a' {} + | sha256sum > /home/jovyan/permissions_checksum.txt
 
