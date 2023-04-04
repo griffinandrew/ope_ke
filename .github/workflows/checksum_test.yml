@@ -24,7 +24,7 @@ jobs:
           PERMISSIONS_CHECKSUM=$( cat permissions_checksum.txt )
           echo "displaying the pulled image checksum: $PERMISSIONS_CHECKSUM "
           QUICK_TRIM=${PERMISSIONS_CHECKSUM::64} #quick_trim is used to get rid of the tailing "-" after the checksum
-          echo "displaying modified checksum: $QUICK_TRIM"
+          echo "displaying modified checksum: $QUICK_TRIM "
           echo "COMPARING PULLED IMAGE CHECKSUM WITH CORRECT IMAGE CHECKSUM"
           #*********************************************
           #need to insert correct image CHECKSUM val to compare
