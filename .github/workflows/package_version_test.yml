@@ -321,7 +321,7 @@ jobs:
               typing_extensions==4.5.0)
                 echo "CORRECT version of package: $line"
                 ;;
-              tzdata==2023.2)
+              tzdata==2023.3)
                 echo "CORRECT version of package: $line"
                 ;;
               uc-micro-py==1.0.1)
@@ -350,7 +350,8 @@ jobs:
           incorr_count=$( cat count.txt )
           if [ "$incorr_count" -gt  "0" ]; then 
                 echo "TEST FAILURE: there are $incorr_count package version(s) that are INCORRECT"
-                echo "DISPLAYING INCORRECT PACKAGE VERSION(S)\n"
+                echo "DISPLAYING INCORRECT PACKAGE VERSION(S)"
+                echo ""
                 cat incorrect_package_list.txt
                 exit 1
           else 
