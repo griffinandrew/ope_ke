@@ -348,13 +348,15 @@ jobs:
             esac
           done
           incorr_count=$( cat count.txt )
-          if [ "$incorr_count" -gt  "0" ]; then 
+          if [ "$incorr_count" -gt  "0" ]; then
+                echo "" 
                 echo "TEST FAILURE: there are $incorr_count package version(s) that are INCORRECT"
                 echo "DISPLAYING INCORRECT PACKAGE VERSION(S)"
                 echo ""
                 cat incorrect_package_list.txt
                 exit 1
           else 
+                echo ""
                 echo "TEST SUCCESS"
                 echo "all packages are the correct version"
           fi
