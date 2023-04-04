@@ -1,7 +1,7 @@
 name: package version test
 on:
   push:
-    branches: griffin-fork/container-jupyter-docker-stacks
+    branches: base-ope-image
 jobs:
   package_version_test:
     runs-on: ubuntu-latest #use the latest ubuntu container image 
