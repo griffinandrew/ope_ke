@@ -21,7 +21,7 @@ jobs:
       - name: run checksum #creates var with checksum value to be compared 
         run: |
           echo "VERIFYING IMAGE CHECKSUM"
-          PERMISSIONS_CHECKSUM=$( cat /home/jovyan/permissions_checksum.txt )
+          PERMISSIONS_CHECKSUM=$( cat permissions_checksum.txt )
           echo "displaying the pulled image checksum: $PERMISSIONS_CHECKSUM "
           QUICK_TRIM=${PERMISSIONS_CHECKSUM::64} #quick_trim is used to get rid of the tailing "-" after the checksum
           echo "displaying modified checksum: $QUICK_TRIM "
