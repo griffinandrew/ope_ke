@@ -48,7 +48,7 @@ jobs:
               backcall==0.2.0)
                 echo "CORRECT version of package: $line"
                 ;;
-              beautifulsoup4==4.12.0)
+                beautifulsoup4==4.12.1)
                 echo "CORRECT version of package: $line"
                 ;;
               certifi==2022.12.7)
