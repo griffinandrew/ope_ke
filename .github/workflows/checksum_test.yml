@@ -29,7 +29,7 @@ jobs:
           #*********************************************
           #need to insert correct image CHECKSUM val to compare
           #*********************************************
-          CHECKSUM=ec2d1184374ceebbcca68d9b9feb588eef6c5845b87d44b7d37abc5358c7d877
+          CHECKSUM=3d60ae145ea06b19a95a300342dc2979d8a77062bb06ffe1b809a2f5ca1ab88a
           if [["$QUICK_TRIM == $CHECKSUM"]]; then
                 echo "VERIFICATION COMPLETE"
                 echo "SUCCESS" 
