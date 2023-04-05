@@ -21,6 +21,8 @@ jobs:
       - name: run checksum #creates var with checksum value to be compared 
         run: |
           pwd
+          cd /home/jovyan/
+          pwd
           echo "VERIFYING IMAGE CHECKSUM"
           PERMISSIONS_CHECKSUM=$( cat permissions_checksum.txt )
           echo "displaying the pulled image checksum: $PERMISSIONS_CHECKSUM "
